@@ -23,7 +23,7 @@ export default function About() {
         <h2>
           Your destination is waiting.
           <br />
-          Your van is ready.
+          Your scent is ready.
         </h2>
         <Link className='link-button' to='/perfumes'>
           Explore our smells

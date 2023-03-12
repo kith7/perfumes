@@ -65,38 +65,53 @@ header a:hover {
 
 /*** HOME PAGE ***/
 .home-container {
-  background: url("./assets/images/home-hero.jpg") no-repeat center center;
+  background: linear-gradient(
+      to bottom,
+      rgba(2, 2, 2, 0.363),
+      rgba(255, 255, 255, 0.151)
+    ),
+    url("./assets/images/home-hero.jpg") no-repeat center center;
   background-size: cover;
   min-height: 350px;
-  color: rgba(255, 255, 255, 0.932);
+  color: rgba(253, 253, 253, 0.877);
   padding: 45px 23px;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.726));
+  text-shadow: 1px 1px 1px #103518;
 }
 
 .home-container h1 {
-  font-weight: 700;
-  font-size: 2.25rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 2.6rem;
   line-height: 42px;
+  /* background-color: #ececec79; */
+  display: inline-flex;
+  color: #ffffff;
 }
 
 .home-container p {
   line-height: 24px;
   font-size: 24px;
+  /* background-color: #dcf7cc94; */
+  display: inline-flex;
+  color: #ffffff;
 }
 
 .home-container a {
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  background-color: #87c53e;
+  background-color: #a6be9be3;
   border: none;
-  width: 100%;
+  width: 60%;
   margin-top: 27px;
   padding-block: 0.75rem;
-  color: rgba(255, 255, 255, 0.705);
-  font-weight: 700;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.1s ease-in-out;
+  text-transform: uppercase;
 }
 
 .home-container a:hover {
@@ -106,6 +121,8 @@ header a:hover {
 /*** ABOUT PAGE ***/
 .about-hero-image {
   max-width: 100%;
+  height: 45vh;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.726));
 }
 
 .about-page-content {
@@ -124,10 +141,12 @@ header a:hover {
 
 .about-page-cta {
   background-color: #a6be9b;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.726));
   color: #161616;
-  padding-inline: 32px;
+  /* padding-inline: 32px; */
   padding-bottom: 32px;
-  margin-inline: 27px;
+  margin-bottom: 32px;
+  /* margin-inline: 27px; */
   border-radius: 5px;
 }
 
@@ -140,4 +159,5 @@ header a:hover {
   background-color: #384134;
   color: white;
   border-radius: 10px;
+  margin: 0;
 }
