@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const TopnNav = () => {
   return (
-    <>
+    <header>
       <Link className='site-logo' to='/'>
         #Perfume
       </Link>
@@ -12,7 +12,7 @@ const TopnNav = () => {
         <Link to='/about'>About</Link>
         <Link to='/perfumes'>Perfumes</Link>
       </nav>
-    </>
+    </header>
   );
 };
 
