@@ -161,3 +161,140 @@ header a:hover {
   border-radius: 10px;
   margin: 0;
 }
+
+.perfume-list-container {
+  padding-inline: 23px;
+}
+
+.perfume-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 34px;
+  margin-top: 57px;
+}
+
+.perfume-tile a {
+  color: #161616;
+  text-decoration: none;
+}
+
+.perfume-tile img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.perfume-list-container button {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.perfume-type {
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #331b1b;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.perfume-type:hover {
+  color: #ffcf95;
+}
+
+.perfume-type:focus {
+  outline: none;
+}
+
+.perfume-type.selected {
+  color: #b4b4b4;
+}
+
+.perfume-type.simple:hover,
+.perfume-type.simple.selected {
+  background-color: #ffeae4;
+}
+
+.perfume-type.cologne:hover,
+.perfume-type.cologne.selected {
+  background-color: #84adab;
+}
+
+.perfume-type.luxury:hover,
+.perfume-type.luxury.selected {
+  background-color: #ebb5b5;
+}
+
+.perfume-type.clear-filters {
+  margin-left: -20px;
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  text-decoration: underline;
+  background-color: transparent;
+  color: #4d4d4d;
+}
+
+i[class*="perfume-type-"] {
+  padding: 7px 14px;
+}
+
+.perfume-detail-container {
+  padding: 27px;
+}
+
+.perfume-detail-container .back-button {
+  color: black;
+  text-decoration: none;
+}
+
+/* .perfume-detail-container .back-button:visited {
+} */
+
+.perfume-detail-container .back-button span {
+  text-decoration: underline;
+}
+
+.perfume-detail {
+  display: flex;
+  flex-direction: column;
+  color: #161616;
+  align-items: center;
+}
+
+.perfume-detail img {
+  border-radius: 5px;
+  margin-block: 47px;
+  width: 30%;
+}
+
+.perfume-detail h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.perfume-detail > i {
+  align-self: center;
+}
+
+.perfume-detail .perfume-price {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.perfume-detail .perfume-price span {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.perfume-detail .link-button {
+  background-color: #758870;
+  color: white;
+  font-size: 1.125rem;
+}

@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { Iperfumes } from "../interfaces/Interfaces";
+import React, { useEffect, useState, useMemo } from "react";
+import { Iperfume } from "../interfaces/Interfaces";
+import PerfumeCard from "../components/PerfumeCard";
 
 const Perfumes = () => {
-  const [perfumesData, setPerfumesData] = useState<Iperfumes>();
+  const [perfumesData, setPerfumesData] = useState<Iperfume[]>([]);
   useEffect(() => {
     const getData = async () => {
-      const data = fetch("https://dummyjson.com/products/category/fragrances")
+      fetch("/api/perfumes")
         .then((res) => res.json())
         .then((data) => {
-          setPerfumesData(data.products);
-          console.log(data.products);
+          setPerfumesData(data.perfumes);
+          console.log(data.perfumes);
         })
         .catch((err) => {
           console.error("Error", err);
@@ -18,7 +19,21 @@ const Perfumes = () => {
     getData();
   }, []);
 
-  return <div>Perfumes</div>;
+  const perfumesCards = useMemo(
+    () =>
+      perfumesData.map((perfumeEl) => {
+        return <PerfumeCard perfume={perfumeEl} key={perfumeEl.id} />;
+      }),
+    [perfumesData]
+  );
+  return (
+    <div className='perfume-list-container'>
+      <h1>Explore our scents</h1>
+      <div className='perfume-list'>
+        {perfumesCards ? perfumesCards : <h2>Loading...</h2>}
+      </div>
+    </div>
+  );
 };
 
 export default Perfumes;
