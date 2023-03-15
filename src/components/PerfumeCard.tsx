@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { Iperfume } from "../interfaces/Interfaces";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 type CardProps = {
   perfume: Iperfume;
 };

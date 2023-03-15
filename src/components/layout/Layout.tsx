@@ -7,6 +7,7 @@ const Layout = () => {
     <>
       <TopnNav />
       <Outlet />
+      <footer>&#169; 2023 #PERFUMES</footer>
     </>
   );
 };

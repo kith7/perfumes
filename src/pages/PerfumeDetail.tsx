@@ -21,16 +21,16 @@ const PerfumeDetail = () => {
   }, [params.id]);
 
   return (
-    <div className='perfume-detail-container'>
+    <div className='agent-detail-container'>
       {perfumeData ? (
-        <div className='perfume-detail'>
+        <div className='agent-detail'>
           <img src={perfumeData.images[1]} />
-          <i className={`perfume-type ${perfumeData.brand} selected`}>
+          <i className={`agent-type ${perfumeData.brand} selected`}>
             {perfumeData.brand}
           </i>
           <h2>{perfumeData.title}</h2>
           <p>{perfumeData.description}</p>
-          <p className='perfume-price'>
+          <p className='agent-price'>
             <span>${perfumeData.price}</span> / flask
           </p>
           <button className='link-button'>Buy this scent</button>

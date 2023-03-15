@@ -45,6 +45,26 @@ header a:hover {
   color: #161616;
   text-decoration: underline;
 }
+.activeLink {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
+}
+main {
+  margin-bottom: 84px;
+}
+
+footer {
+  background-color: #161616;
+  color: #aaaaaa;
+  height: 74px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  font-weight: 500;
+}
 
 .link-button {
   display: inline-block;
@@ -297,4 +317,59 @@ i[class*="perfume-type-"] {
   background-color: #758870;
   color: white;
   font-size: 1.125rem;
+}
+
+.agent-nav {
+  display: flex;
+}
+
+.agent-nav a {
+  text-decoration: none;
+  color: #4d4d4d;
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.agent-nav a:hover {
+  color: #161616;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.agent-perfume-link-wrapper {
+  color: unset;
+  text-decoration: unset;
+}
+
+.agent-perfumes-list {
+  padding-inline: 26px;
+}
+
+.agent-perfumes-title {
+  padding-inline: 26px;
+}
+
+.agent-perfume-single {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 15px;
+  padding-block: 18px;
+  padding-left: 24px;
+}
+
+.agent-perfume-single > img {
+  height: 70px;
+  border-radius: 5px;
+  margin-right: 17px;
+}
+
+.agent-perfume-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-block: 10px;
+}
+
+.agent-perfume-info p {
+  margin-block: 10px;
 }

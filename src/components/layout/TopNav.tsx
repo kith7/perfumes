@@ -1,16 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const TopnNav = () => {
   return (
     <header>
-      <Link className='site-logo' to='/'>
+      <NavLink className='site-logo' to='/'>
         #Perfume
-      </Link>
+      </NavLink>
       <nav>
-        <Link to='/'>Home</Link>
-        <Link to='/about'>About</Link>
-        <Link to='/perfumes'>Perfumes</Link>
+        <NavLink
+          to='/about'
+          className={({ isActive }) => (isActive ? "activeLink" : "")}
+        >
+          About
+        </NavLink>
+        <NavLink
+          to='/perfumes'
+          className={({ isActive }) => (isActive ? "activeLink" : "")}
+        >
+          Perfumes
+        </NavLink>
+        <NavLink
+          to='/agent'
+          className={({ isActive }) => (isActive ? "activeLink" : "")}
+        >
+          Agent
+        </NavLink>
       </nav>
     </header>
   );

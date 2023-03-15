@@ -25,6 +25,7 @@ createServer({
         "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
       ],
       type: "simple",
+      agentId: "123",
     });
     server.create("perfume", {
       id: "2",
@@ -45,6 +46,7 @@ createServer({
         "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
       ],
       type: "cologne",
+      agentId: "123",
     });
     server.create("perfume", {
       id: "3",
@@ -66,6 +68,7 @@ createServer({
         "https://i.dummyjson.com/data/products/13/thumbnail.webp",
       ],
       type: "luxury",
+      agentId: "321",
     });
     server.create("perfume", {
       id: "4",
@@ -86,6 +89,7 @@ createServer({
         "https://i.dummyjson.com/data/products/14/thumbnail.jpg",
       ],
       type: "simple",
+      agentId: "321",
     });
     server.create("perfume", {
       id: "5",
@@ -107,6 +111,7 @@ createServer({
         "https://i.dummyjson.com/data/products/15/thumbnail.jpg",
       ],
       type: "luxury",
+      agentId: "123",
     });
     server.create("perfume", {
       id: "6",
@@ -128,6 +133,7 @@ createServer({
         "https://i.dummyjson.com/data/products/15/thumbnail.jpg",
       ],
       type: "cologne",
+      agentId: "321",
     });
   },
 
@@ -142,6 +148,14 @@ createServer({
     this.get("/perfumes/:id", (schema, request) => {
       const id = request.params.id;
       return schema.perfumes.find(id);
+    });
+    this.get("/agent/perfumes", (schema, request) => {
+      return schema.perfumes.where({ agentId: "123" });
+    });
+
+    this.get("/agent/perfumes/:id", (schema, request) => {
+      const id = request.params.id;
+      return schema.perfumes.where({ id, agentId: "123" });
     });
   },
 });
