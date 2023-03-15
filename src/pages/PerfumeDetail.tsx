@@ -18,7 +18,7 @@ const PerfumeDetail = () => {
         });
     };
     getData();
-  }, [params.id]);
+  }, []);
 
   return (
     <div className='agent-detail-container'>
@@ -33,7 +33,6 @@ const PerfumeDetail = () => {
           <p className='agent-price'>
             <span>${perfumeData.price}</span> / flask
           </p>
-          <button className='link-button'>Buy this scent</button>
         </div>
       ) : (
         <h2>Loading...</h2>
