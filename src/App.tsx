@@ -18,7 +18,7 @@ import PerfumeDetailAgentLayout from "./components/layout/PerfumeDetailAgentLayo
 import DetailInfo from "./pages/Agent/AgentPerfume/DetailInfo";
 import PhotosInfo from "./pages/Agent/AgentPerfume/PhotosInfo";
 import PricingInfo from "./pages/Agent/AgentPerfume/PricingInfo";
-
+import NotFoundPage from "./pages/NotFoundPage";
 function App() {
   return (
     <Routes>
@@ -38,6 +38,7 @@ function App() {
             <Route path='photos' element={<PhotosInfo />} />
           </Route>
         </Route>
+        <Route path='*' element={<NotFoundPage />} />
       </Route>
     </Routes>
   );

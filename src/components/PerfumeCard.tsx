@@ -25,4 +25,4 @@ const PerfumeCard = ({ perfume }: CardProps) => {
   );
 };
 
-export default memo(PerfumeCard);
+export default PerfumeCard;

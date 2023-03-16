@@ -2,21 +2,34 @@ import React, { useEffect, useState, useMemo } from "react";
 import { Iperfume } from "../interfaces/Interfaces";
 import PerfumeCard from "../components/PerfumeCard";
 import { useSearchParams } from "react-router-dom";
+import { getPerfumes } from "../api/api.js";
 const Perfumes = () => {
   let [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
+  const [loading, setLoading] = React.useState(false);
   const [perfumesData, setPerfumesData] = useState<Iperfume[]>([]);
+  const [error, setError] = React.useState(null);
   useEffect(() => {
     const getData = async () => {
-      fetch("/api/perfumes")
-        .then((res) => res.json())
-        .then((data) => {
-          setPerfumesData(data.perfumes);
-          console.log(data.perfumes);
-        })
-        .catch((err) => {
-          console.error("Error", err);
-        });
+      setLoading(true);
+      try {
+        const data = await getPerfumes();
+        setPerfumesData(data);
+        setLoading(false);
+      } catch (error) {
+        setError(error:any);
+      } finally {
+        setLoading(false);
+      }
+      // fetch("/api/perfumes")
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     setPerfumesData(data.perfumes);
+      //     console.log(data.perfumes);
+      //   })
+      //   .catch((err) => {
+      //     console.error("Error", err);
+      //   });
     };
     getData();
   }, []);
@@ -30,6 +43,10 @@ const Perfumes = () => {
       }),
     [filteredPerfumesData]
   );
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <div className='perfume-list-container'>
       <h1>Explore our scents</h1>
