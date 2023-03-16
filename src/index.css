@@ -219,6 +219,15 @@ footer {
   cursor: pointer;
 }
 
+.perfume-list-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.perfume-list-filter-buttons > a {
+  margin-right: 15px;
+}
+
 .perfume-type {
   height: 34px;
   padding: 6px 26px;
@@ -251,6 +260,7 @@ footer {
 .perfume-type.cologne:hover,
 .perfume-type.cologne.selected {
   background-color: #84adab;
+  color: #fbfffb;
 }
 
 .perfume-type.luxury:hover,
