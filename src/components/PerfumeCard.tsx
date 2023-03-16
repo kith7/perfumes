@@ -12,14 +12,14 @@ const PerfumeCard = ({ perfume }: CardProps) => {
         <img src={perfume.images[1]} />
         <div className='perfume-info'>
           <h3>{perfume.brand}</h3>
+          <i className={`perfume-type ${perfume.type} selected`}>
+            {perfume.type}
+          </i>
           <p>
             ${perfume.price}
-            <span>/day</span>
+            <span>/flask</span>
           </p>
         </div>
-        <i className={`perfume-type ${perfume.title} selected`}>
-          {perfume.title}
-        </i>
       </Link>
     </div>
   );

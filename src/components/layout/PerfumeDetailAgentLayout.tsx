@@ -1,45 +1,37 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import { useParams } from "react-router-dom";
+
 const PerfumeDetailAgentLayout = () => {
   const activeStyles = {
     fontWeight: "bold",
     textDecoration: "underline",
     color: "#161616",
   };
-  const { id } = useParams();
 
   return (
     <>
-      <nav className='agent-nav'>
+      <nav className='host-van-detail-nav'>
         <NavLink
-          to={`/agent/perfumes/${id}`}
+          to={`.`}
           style={({ isActive }) => (isActive ? activeStyles : undefined)}
           end
         >
           Details
         </NavLink>
         <NavLink
-          to='/agent/income'
+          to='pricing'
           style={({ isActive }) => (isActive ? activeStyles : undefined)}
         >
-          Income
+          Pricing
         </NavLink>
         <NavLink
-          to='/agent/reviews'
+          to='photos'
           style={({ isActive }) => (isActive ? activeStyles : undefined)}
         >
-          Reviews
-        </NavLink>
-        <NavLink
-          to='/agent/perfumes'
-          style={({ isActive }) => (isActive ? activeStyles : undefined)}
-        >
-          Perfumes
+          Photos
         </NavLink>
       </nav>
-      <Outlet />
     </>
   );
 };

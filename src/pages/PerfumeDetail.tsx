@@ -25,10 +25,11 @@ const PerfumeDetail = () => {
       {perfumeData ? (
         <div className='agent-detail'>
           <img src={perfumeData.images[1]} />
-          <i className={`agent-type ${perfumeData.brand} selected`}>
-            {perfumeData.brand}
-          </i>
+
           <h2>{perfumeData.title}</h2>
+          <i className={`agent-type ${perfumeData.type} selected`}>
+            {perfumeData.type}
+          </i>
           <p>{perfumeData.description}</p>
           <p className='agent-price'>
             <span>${perfumeData.price}</span> / flask

@@ -13,6 +13,11 @@ import Reviews from "./pages/Agent/Reviews";
 import AgentLayout from "./components/layout/AgentLayout";
 import AgentPerfumeDetail from "./pages/Agent/AgentPerfumeDetail";
 import PerfumesAgent from "./pages/Agent/PerfumesAgent";
+import PerfumeDetailAgentLayout from "./components/layout/PerfumeDetailAgentLayout";
+
+import DetailInfo from "./pages/Agent/AgentPerfume/DetailInfo";
+import PhotosInfo from "./pages/Agent/AgentPerfume/PhotosInfo";
+import PricingInfo from "./pages/Agent/AgentPerfume/PricingInfo";
 
 function App() {
   return (
@@ -25,10 +30,13 @@ function App() {
         <Route path='/agent' element={<AgentLayout />}>
           <Route index element={<Dashboard />} />
           <Route path='perfumes' element={<PerfumesAgent />} />
-          <Route path='perfumes/:id' element={<AgentPerfumeDetail />} />
-
           <Route path='income' element={<Income />} />
           <Route path='reviews' element={<Reviews />} />
+          <Route path='perfumes/:id' element={<AgentPerfumeDetail />}>
+            <Route index element={<DetailInfo />} />
+            <Route path='pricing' element={<PricingInfo />} />
+            <Route path='photos' element={<PhotosInfo />} />
+          </Route>
         </Route>
       </Route>
     </Routes>

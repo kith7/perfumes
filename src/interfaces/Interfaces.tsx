@@ -10,4 +10,5 @@ export interface Iperfume {
   category: string;
   thumbnail: string;
   images: Array<string>;
+  type: "string";
 }

@@ -12,7 +12,7 @@ const AgentLayout = () => {
     <>
       <nav className='agent-nav'>
         <NavLink
-          to='/agent'
+          to='.'
           style={({ isActive }) => (isActive ? activeStyles : undefined)}
           end
         >
@@ -37,6 +37,7 @@ const AgentLayout = () => {
           Perfumes
         </NavLink>
       </nav>
+
       <Outlet />
     </>
   );
