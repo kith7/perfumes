@@ -1,44 +1,25 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { Iperfume } from "../interfaces/Interfaces";
 import PerfumeCard from "../components/PerfumeCard";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useLoaderData } from "react-router-dom";
 import { getPerfumes } from "../api/api.js";
+
+export async function loader() {
+  return await getPerfumes();
+}
 const Perfumes = () => {
   let [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get("type");
   const [loading, setLoading] = React.useState(false);
-  const [perfumesData, setPerfumesData] = useState<Iperfume[]>([]);
-  const [error, setError] = React.useState(null);
-  useEffect(() => {
-    const getData = async () => {
-      setLoading(true);
-      try {
-        const data = await getPerfumes();
-        setPerfumesData(data);
-        setLoading(false);
-      } catch (error) {
-        setError(error:any);
-      } finally {
-        setLoading(false);
-      }
-      // fetch("/api/perfumes")
-      //   .then((res) => res.json())
-      //   .then((data) => {
-      //     setPerfumesData(data.perfumes);
-      //     console.log(data.perfumes);
-      //   })
-      //   .catch((err) => {
-      //     console.error("Error", err);
-      //   });
-    };
-    getData();
-  }, []);
+  // const [perfumesData, setPerfumesData] = useState<Iperfume[]>([]);
+  // const [error, setError] = React.useState<Error | any>();
+  const perfumesData: Iperfume[] | any = useLoaderData();
   const filteredPerfumesData = typeFilter
-    ? perfumesData.filter((el) => el.type === typeFilter)
+    ? perfumesData.filter((el: Iperfume) => el.type === typeFilter)
     : perfumesData;
   const perfumesCards = useMemo(
     () =>
-      filteredPerfumesData.map((perfumeEl) => {
+      filteredPerfumesData.map((perfumeEl: Iperfume) => {
         return <PerfumeCard perfume={perfumeEl} key={perfumeEl.id} />;
       }),
     [filteredPerfumesData]

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Iperfume } from "../interfaces/Interfaces";
 import { Link, useNavigate } from "react-router-dom";
+
 const PerfumeDetail = () => {
   const params = useParams();
   const navigate = useNavigate();
