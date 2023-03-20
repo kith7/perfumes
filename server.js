@@ -3,6 +3,7 @@ import { createServer, Model } from "miragejs";
 createServer({
   models: {
     perfume: Model,
+    user: Model,
   },
 
   seeds(server) {
@@ -136,6 +137,12 @@ createServer({
       type: "cologne",
       agentId: "321",
     });
+    server.create("user", {
+      agentId: "123",
+      email: "2b@ornot2b.com",
+      password: "b2b",
+      name: "Ann",
+    });
   },
 
   routes() {
@@ -157,6 +164,22 @@ createServer({
     this.get("/agent/perfumes/:id", (schema, request) => {
       const id = request.params.id;
       return schema.perfumes.where({ id, agentId: "123" });
+    });
+
+    this.post("/login", (schema, request) => {
+      const { email, password } = JSON.parse(request.requestBody);
+      // Never use this auth version in real life.
+      //  never save raw text passwords, you can hash them using bcrypt
+      // in your database
+      const foundUser = schema.users.findBy({ email, password });
+      if (!foundUser) {
+        return new Response(401, {}, { message: "Incorrect user credentials" });
+      }
+      foundUser.password = undefined;
+      return {
+        user: foundUser,
+        token: "Tokens found.",
+      };
     });
   },
 });
