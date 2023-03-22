@@ -1,3 +1,8 @@
+type tCreds = {
+  email: string;
+  password: string;
+};
+
 export async function getPerfumes() {
   const res = await fetch("/api/perfumes");
   if (!res.ok) {
@@ -11,10 +16,6 @@ export async function getPerfumes() {
   return data.perfumes;
 }
 
-type tCreds = {
-  email: string;
-  password: string;
-};
 export async function loginUser(credentials: tCreds): Promise<Response> {
   const res = await fetch("/api/login", {
     method: "post",

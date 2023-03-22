@@ -530,6 +530,10 @@ i[class*="perfume-type-"] {
   color: white;
   font-family: "Inter", sans-serif;
 }
+.login-form > button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
 
 .login-error {
   color: rgb(221, 94, 94);

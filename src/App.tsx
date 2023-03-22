@@ -23,7 +23,7 @@ import PricingInfo from "./pages/Agent/AgentPerfume/PricingInfo";
 import NotFoundPage from "./pages/NotFoundPage";
 import ErrorLoading from "./components/Error";
 
-import Login from "./pages/Login";
+import Login, { action as formAction } from "./pages/Login";
 import AuthRequired from "./components/AuthRequired";
 import { loader as PerfumesLoader } from "./pages/Perfumes";
 
@@ -32,7 +32,7 @@ const router = createBrowserRouter(
     <Route path='/' element={<Layout />} errorElement={<ErrorLoading />}>
       <Route index element={<Home />} />
       <Route path='/about' element={<About />} />
-      <Route path='/login' element={<Login />} />
+      <Route path='/login' action={formAction} element={<Login />} />
       <Route path='/perfumes' element={<Perfumes />} loader={PerfumesLoader} />
       <Route path='/perfumes/:id' element={<PerfumeDetail />} />
       <Route element={<AuthRequired />}>

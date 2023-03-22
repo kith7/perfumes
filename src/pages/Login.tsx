@@ -1,64 +1,50 @@
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import {
+  useNavigate,
+  useLocation,
+  useNavigation,
+  Form,
+  useActionData,
+} from "react-router-dom";
 import { loginUser } from "../api/api";
-export default function Login() {
-  const [loginFormData, setLoginFormData] = React.useState({
-    email: "",
-    password: "",
-  });
-  const [status, setStatus] = React.useState("idle");
-  const [error, setError] = React.useState<Error | null>();
 
-  const location = useLocation();
-  function handleSubmit(e: React.SyntheticEvent) {
-    e.preventDefault();
-    setError(null);
-    setStatus("submitting");
-
-    loginUser(loginFormData)
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setStatus("idle");
-      });
+export async function action({ request }: any) {
+  const formData = await request.formData();
+  const email = formData.get("email");
+  const password = formData.get("password");
+  try {
+    const actionData = await loginUser({ email, password });
+    localStorage.setItem("loggedin", true);
+    return actionData;
+  } catch (error: any) {
+    return { error: error.message };
   }
+}
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const { name, value } = e.target;
-    setLoginFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+export default function Login() {
+  const navigate = useNavigate();
+  const actionData: any = useActionData();
+  const location = useLocation();
+  const from = location.state?.from || "/agent";
+  const navigation = useNavigation();
+  const status = navigation?.state;
+
+  if (actionData?.token) {
+    navigate(from, { replace: true });
   }
 
   return (
     <div className='login-container'>
       <h1>Sign in to your account</h1>
-      {error && <h3 className='login-error'>{error.message}</h3>}
+      {actionData?.error && <h3 className='login-error'>{actionData.error}</h3>}
       {location.state?.message ? <h3>Please log in first</h3> : ""}
-      <form onSubmit={handleSubmit} className='login-form'>
-        <input
-          name='email'
-          onChange={handleChange}
-          type='email'
-          placeholder='Email address'
-          value={loginFormData.email}
-        />
-        <input
-          name='password'
-          onChange={handleChange}
-          type='password'
-          placeholder='Password'
-          value={loginFormData.password}
-        />
+      <Form action='/login' method='post' className='login-form'>
+        <input name='email' type='email' placeholder='Email address' />
+        <input name='password' type='password' placeholder='Password' />
         <button disabled={status === "submitting"}>
-          {status === "submitting" ? "Logging in..." : "Log in"}
+          {status === "submitting" || "loading" ? "Logging in..." : "Log in"}
         </button>
-      </form>
+      </Form>
     </div>
   );
 }

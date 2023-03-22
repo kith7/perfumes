@@ -2,6 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const TopnNav = () => {
+  function fakeLogOut() {
+    localStorage.removeItem("loggedin");
+  }
   return (
     <header>
       <NavLink className='site-logo' to='/'>
@@ -26,6 +29,7 @@ const TopnNav = () => {
         >
           Agent
         </NavLink>
+        <button onClick={fakeLogOut}>X</button>
       </nav>
     </header>
   );
