@@ -10,7 +10,7 @@ const PhotosInfo = () => {
           src={img}
           width={150}
           key={img}
-          className='host-van-detail-image'
+          className='agent-perfume-detail-image'
         />
       ))}
     </div>

@@ -14,7 +14,7 @@ export async function action({ request }: any) {
   const password = formData.get("password");
   try {
     const actionData = await loginUser({ email, password });
-    localStorage.setItem("loggedin", true);
+    localStorage.setItem("loggedin", "true");
     return actionData;
   } catch (error: any) {
     return { error: error.message };
@@ -29,9 +29,11 @@ export default function Login() {
   const navigation = useNavigation();
   const status = navigation?.state;
 
-  if (actionData?.token) {
-    navigate(from, { replace: true });
-  }
+  React.useEffect(() => {
+    if (actionData?.token) {
+      navigate(from, { replace: true });
+    }
+  }, [actionData]);
 
   return (
     <div className='login-container'>

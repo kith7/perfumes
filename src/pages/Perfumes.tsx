@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, Suspense } from "react";
+import React, { Suspense } from "react";
 import { Iperfume } from "../interfaces/Interfaces";
 import PerfumeCard from "../components/PerfumeCard";
 import {

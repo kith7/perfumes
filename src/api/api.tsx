@@ -31,3 +31,17 @@ export async function loginUser(credentials: tCreds): Promise<Response> {
   }
   return data;
 }
+
+export async function getAgentPerfumes(id?: string) {
+  const url = id ? `/api/agent/perfumes/${id}` : "/api/agent/perfumes";
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw {
+      message: "Failed to fetch perfumes",
+      statusText: res.statusText,
+      status: res.status,
+    };
+  }
+  const data = await res.json();
+  return data.perfumes;
+}

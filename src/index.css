@@ -396,48 +396,48 @@ i[class*="perfume-type-"] {
   margin-block: 10px;
 }
 
-.host-van-detail-layout-container {
+.agent-perfume-detail-layout-container {
   background-color: white;
   padding: 24px;
   margin: 30px 26px;
 }
 
-.host-van-detail {
+.agent-perfume-detail {
   display: flex;
   align-items: center;
 }
 
-.host-van-detail > img {
+.agent-perfume-detail > img {
   height: 160px;
   border-radius: 5px;
   margin-right: 20px;
 }
 
-.host-van-detail-info-text > h3 {
+.agent-perfume-detail-info-text > h3 {
   margin-top: 24px;
   margin-bottom: 5px;
   font-size: 26px;
   font-weight: 700;
 }
 
-.host-van-detail-info-text > h4 {
+.agent-perfume-detail-info-text > h4 {
   font-size: 20px;
   margin-block: 0;
 }
 
-.host-van-detail-nav {
+.agent-perfume-detail-nav {
   display: flex;
   margin-block: 25px;
 }
 
-.host-van-detail-nav a {
+.agent-perfume-detail-nav a {
   text-decoration: none;
   color: #4d4d4d;
   font-weight: 500;
   padding: 5px 20px;
 }
 
-.host-van-detail-nav a:first-of-type {
+.agent-perfume-detail-nav a:first-of-type {
   text-decoration: none;
   color: #4d4d4d;
   font-weight: 500;
@@ -445,32 +445,32 @@ i[class*="perfume-type-"] {
   margin-left: -15px;
 }
 
-.host-van-detail-nav a:hover {
+.agent-perfume-detail-nav a:hover {
   color: #161616;
   text-decoration: underline;
   font-weight: 700;
 }
 
-.host-van-detail-info > h4 {
+.agent-perfume-detail-info > h4 {
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
 }
-.host-van-detail-info > h4 > span {
+.agent-perfume-detail-info > h4 > span {
   font-weight: 500;
 }
 
-.host-van-price {
+.agent-perfume-price {
   font-size: 24px;
   font-weight: 500;
 }
 
-.host-van-price > span {
+.agent-perfume-price > span {
   font-size: 16px;
   color: #4d4d4d;
 }
 
-.host-van-detail-image {
+.agent-perfume-detail-image {
   height: 100px;
   border-radius: 5px;
 }
@@ -522,7 +522,7 @@ i[class*="perfume-type-"] {
 }
 
 .login-form > button {
-  background-color: #ff8c38;
+  background-color: #dcf7cc94;
   border: none;
   border-radius: 6px;
   height: 55px;
@@ -537,4 +537,200 @@ i[class*="perfume-type-"] {
 
 .login-error {
   color: rgb(221, 94, 94);
+}
+
+.agent-dashboard-earnings {
+  background-color: #b4c29e;
+  padding: 37px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.agent-dashboard-earnings > .info > h1 {
+  font-size: 36px;
+  color: #161616;
+  margin: 0;
+}
+
+.agent-dashboard-earnings > .info > p {
+  color: #4d4d4d;
+}
+
+.agent-dashboard-earnings > .info > p > span {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.agent-dashboard-earnings > .info > h2 {
+  margin: 0;
+  font-size: 38px;
+  color: #161616;
+  font-weight: 900;
+}
+
+.agent-dashboard-reviews {
+  background-color: #dcf7cc94;
+  padding: 25px 26px;
+  display: flex;
+  align-items: center;
+}
+
+.agent-dashboard-reviews > h2 {
+  margin: 0;
+}
+
+.agent-dashboard-reviews .star {
+  color: #040801;
+  margin-left: 15px;
+  font-size: 25px;
+}
+
+.agent-dashboard-reviews p {
+  margin-left: 5px;
+  font-size: 20px;
+  color: #4d4d4d;
+  margin-right: auto;
+}
+
+.agent-dashboard-reviews p > span {
+  font-weight: bold;
+  color: #161616;
+}
+
+.agent-dashboard-perfumes {
+  padding: 38px 26px;
+}
+
+.agent-dashboard-perfumes > .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.agent-dashboard-perfumes .agent-perfumes-list {
+  padding-inline: 0;
+}
+
+.agent-income {
+  padding-inline: 26px;
+  color: #161616;
+}
+
+.agent-income > p {
+  color: #4d4d4d;
+}
+
+.agent-income > p span {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.agent-income > h2 {
+  font-size: 38px;
+  color: #161616;
+  font-weight: 900;
+}
+
+img.graph {
+  width: 100%;
+  max-width: 500px;
+}
+
+.agent-income .info-header > p {
+  color: #4d4d4d;
+}
+
+.agent-income .info-header > p span {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.agent-income .info-header > h3 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-top: 60px;
+}
+
+.agent-income .transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 31px;
+  padding: 35px 29px;
+  border-radius: 6px;
+}
+.agent-income .transaction > h3 {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.agent-income .transaction > p {
+  font-weight: 500;
+  font-size: 20px;
+  color: #4d4d4d;
+}
+
+.agent-reviews {
+  padding-inline: 26px;
+  color: #161616;
+}
+
+.agent-reviews .top-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
+
+.agent-reviews .top-text > h2 {
+  font-weight: 700;
+  font-size: 32px;
+  margin: 0;
+  margin-right: 20px;
+}
+
+.agent-reviews .top-text > p {
+  margin: 0;
+  color: #4d4d4d;
+}
+
+.agent-reviews .top-text > p span {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.agent-reviews > img {
+  margin-bottom: 36px;
+}
+
+.agent-reviews .review {
+  margin-block: 25px;
+}
+
+.agent-reviews .review .info {
+  display: flex;
+}
+
+.agent-reviews .review .name {
+  color: #161616;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.agent-reviews .review .date {
+  color: #8c8c8c;
+}
+
+.agent-reviews hr {
+  background-color: #c7c7c7;
+  height: 1px;
+  border: 0;
+}
+
+.agent-reviews .review-star {
+  color: #ffdb38;
+  margin-right: 5px;
 }

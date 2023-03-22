@@ -22,11 +22,11 @@ const AgentPerfumeDetail = () => {
       <NavLink to={`../perfumes`} className='back-button'>
         &larr; <span>Back to all perfumes</span>
       </NavLink>
-      <div className='host-van-detail-layout-container'>
-        <div className='host-van-detail'>
+      <div className='agent-perfume-detail-layout-container'>
+        <div className='agent-perfume-detail'>
           <img src={currentPerf.images[1]} />
-          <div className='hostc-van-detail-info-text'>
-            <i className={`van-type van-type-${currentPerf.type}`}>
+          <div className='agentc-perfume-detail-info-text'>
+            <i className={`perfume-type perfume-type-${currentPerf.type}`}>
               {currentPerf.type}
             </i>
             <h3>{currentPerf.title}</h3>

@@ -5,7 +5,7 @@ const DetailInfo = () => {
   const { description, brand, type, title }: Iperfume = useOutletContext();
   console.log(useOutletContext());
   return (
-    <section className='host-van-detail-info'>
+    <section className='agent-perfume-detail-info'>
       <h4>
         Brand: <span>{brand}</span>
       </h4>

@@ -11,7 +11,7 @@ const PerfumeDetailAgentLayout = () => {
 
   return (
     <>
-      <nav className='host-van-detail-nav'>
+      <nav className='agent-perfume-detail-nav'>
         <NavLink
           to={`.`}
           style={({ isActive }) => (isActive ? activeStyles : undefined)}

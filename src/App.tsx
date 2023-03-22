@@ -33,7 +33,12 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path='/about' element={<About />} />
       <Route path='/login' action={formAction} element={<Login />} />
-      <Route path='/perfumes' element={<Perfumes />} loader={PerfumesLoader} />
+      <Route
+        path='/perfumes'
+        element={<Perfumes />}
+        loader={PerfumesLoader}
+        errorElement={<ErrorLoading />}
+      />
       <Route path='/perfumes/:id' element={<PerfumeDetail />} />
       <Route element={<AuthRequired />}>
         <Route path='/agent' element={<AgentLayout />}>
