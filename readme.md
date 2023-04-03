@@ -1,0 +1,1 @@
+This demo tries to utilise as many of React Router's 6 features as possible. It is a perfume store which allows a user to sort products according to the categories, and also to login to his/her personal dashboard to see reviews, and personalized sales data.
