@@ -27,7 +27,7 @@ header {
 }
 
 header .site-logo {
-  color: black;
+  color: rgb(56, 43, 43);
   margin-right: auto;
   text-transform: uppercase;
   font-weight: 900;
@@ -36,13 +36,13 @@ header .site-logo {
 
 header a {
   text-decoration: none;
-  color: #4d4d4d;
+  color: #4d4d4dce;
   font-weight: 600;
   padding: 5px 20px;
 }
 
 header a:hover {
-  color: #161616;
+  color: #161616ce;
   text-decoration: underline;
 }
 .activeLink {
@@ -56,7 +56,7 @@ main {
 
 footer {
   background-color: #161616;
-  color: #aaaaaa;
+  color: #b8abab;
   height: 74px;
   display: flex;
   flex-shrink: 0;
@@ -80,7 +80,7 @@ footer {
 }
 .back-button {
   display: block;
-  color: black;
+  color: rgb(44, 44, 44);
   text-decoration: none;
   margin-top: 60px;
   margin-left: 26px;
@@ -99,7 +99,7 @@ footer {
 .home-container {
   background: linear-gradient(
       to bottom,
-      rgba(2, 2, 2, 0.363),
+      rgba(46, 46, 46, 0.363),
       rgba(255, 255, 255, 0.151)
     ),
     url("./assets/images/home-hero.jpg") no-repeat center center;
@@ -126,7 +126,7 @@ footer {
   font-size: 24px;
   /* background-color: #dcf7cc94; */
   display: inline-flex;
-  color: #ffffff;
+  color: #ebebeb;
 }
 
 .home-container a {
