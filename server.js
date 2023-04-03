@@ -170,7 +170,6 @@ createServer({
       const { email, password } = JSON.parse(request.requestBody);
       // Never use this auth version in real life.
       //  never save raw text passwords, you can hash them using bcrypt
-      // in your database
       const foundUser = schema.users.findBy({ email, password });
       if (!foundUser) {
         return new Response(401, {}, { message: "Incorrect user credentials" });
